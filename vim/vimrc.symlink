@@ -9,8 +9,9 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " let Vundle manage Vundle, required
-
 Plugin 'gmarik/vundle'
+
+" Plugins
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/nerdtree'
 Plugin 'groenewege/vim-less'
@@ -26,17 +27,11 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 
-
-"Plugin 'klen/python-mode'
-
 colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
 
 filetype plugin on
 
 syntax on
-"set bg=dark
 set nu
 set cindent
 set ignorecase
@@ -107,13 +102,6 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 "
 "
-
-"
-" Show indentation
-"
-"set list
-"set listchars=tab:»-,trail:·,eol:¶,extends:>,precedes:<
-"set listchars=tab:»-,trail:·
 
 "
 " Mouse
