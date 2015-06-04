@@ -11,30 +11,21 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 
 Plugin 'gmarik/vundle'
-
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/nerdtree'
-
-Bundle 'groenewege/vim-less'
-
+Plugin 'groenewege/vim-less'
 Plugin 'terryma/vim-multiple-cursors'
-
 Plugin 'kien/ctrlp.vim'
-
 Plugin 'yegappan/grep'
-
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'bling/vim-airline'
-
-Bundle 'mileszs/ack.vim'
-
-Bundle 'altercation/vim-colors-solarized'
-
-Bundle 'nathanaelkane/vim-indent-guides'
-
+Plugin 'mileszs/ack.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ntpeters/vim-better-whitespace'
+
 
 "Plugin 'klen/python-mode'
 
@@ -51,10 +42,9 @@ set cindent
 set ignorecase
 set nopaste
 
-" Custom undo/backup dirs
-"set undodir=~/.vim/.undo//
-"set backupdir=~/.vim/.backup//
-"set directory=~/.vim/.swp//
+" Persist undo history
+set undofile
+set undodir=~/.vim/undo/
 
 "
 " Mappings: autocmd VimEnter makes sure the mappings overwrite
@@ -74,16 +64,13 @@ autocmd VimEnter * noremap <F9> :setlocal spell spelllang=en_us<cr>
 autocmd VimEnter * noremap <F10> :setlocal spell spelllang=pt<cr>
 autocmd VimEnter * noremap <F11> :setlocal nospell<cr>
 
-"Tab = 4 spaces
+" Tab => spaces
 set tabstop=2
 set shiftwidth=2
 set expandtab
 
-"Search highlight
+" Search highlight
 set hlsearch
-
-"Line number custom color
-"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 "Set actionscript highlight
 autocmd BufRead *.as set filetype=actionscript
@@ -91,14 +78,6 @@ autocmd BufRead *.as set filetype=actionscript
 "Highlight overlength lines
 highlight OverLength ctermfg=red
 call matchadd('OverLength', '\%101v.\+')
-
-"Show column max length
-"set colorcolumn=101
-"highlight ColorColumn ctermbg=7
-
-"Highlight trailing whitespaces and spaces before tabs
-highlight ExtraWhitespace ctermbg=red guibg=red
-call matchadd('ExtraWhitespace', '\s\+$')
 
 "
 " Latex-Box
@@ -119,9 +98,6 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 "
 " CTRL-P
 "
-"let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-"let g:ctrlp_working_path_mode = 'r'
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
 
 "
@@ -129,7 +105,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 "
 set laststatus=2
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
 "
 "
 
@@ -144,3 +119,9 @@ let g:airline_powerline_fonts = 1
 " Mouse
 "
 set mouse=a
+
+"
+" Better whitespace
+"
+let g:strip_whitespace_on_save = 1
+
