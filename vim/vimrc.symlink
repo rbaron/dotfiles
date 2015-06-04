@@ -1,4 +1,146 @@
-syntax on
+"
+" Vundle plugin manager
+"
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+
+Plugin 'gmarik/vundle'
+
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
+Plugin 'scrooloose/nerdtree'
+
+Bundle 'groenewege/vim-less'
+
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'yegappan/grep'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'bling/vim-airline'
+
+Bundle 'mileszs/ack.vim'
+
+Bundle 'altercation/vim-colors-solarized'
+
+Bundle 'nathanaelkane/vim-indent-guides'
+
+Plugin 'flazz/vim-colorschemes'
+
+"Plugin 'klen/python-mode'
+
+colorscheme molokai
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+
+filetype plugin on
+
+syntax on
+"set bg=dark
+set nu
+set cindent
+set ignorecase
+set nopaste
+
+" Custom undo/backup dirs
+"set undodir=~/.vim/.undo//
+"set backupdir=~/.vim/.backup//
+"set directory=~/.vim/.swp//
+
+"
+" Mappings: autocmd VimEnter makes sure the mappings overwrite
+"   any possible plugin mapping
+"
+autocmd VimEnter * noremap <C-j> :tabnext<cr>
+autocmd VimEnter * noremap <C-k> :tabprevious<cr>
+autocmd VimEnter * noremap <C-t> :tabnew<cr>
+autocmd VimEnter * noremap <C-h> <c-w><c-w>
+autocmd VimEnter * noremap <tab><tab> <c-w><c-w>
+
+"
+" Auto correct
+"
+" Jump to next incorrect word: [s ]s
+autocmd VimEnter * noremap <F9> :setlocal spell spelllang=en_us<cr>
+autocmd VimEnter * noremap <F10> :setlocal spell spelllang=pt<cr>
+autocmd VimEnter * noremap <F11> :setlocal nospell<cr>
+
+"Tab = 4 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+"Search highlight
+set hlsearch
+
+"Line number custom color
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+"Set actionscript highlight
+autocmd BufRead *.as set filetype=actionscript
+
+"Highlight overlength lines
+highlight OverLength ctermfg=red
+call matchadd('OverLength', '\%101v.\+')
+
+"Show column max length
+"set colorcolumn=101
+"highlight ColorColumn ctermbg=7
+
+"Highlight trailing whitespaces and spaces before tabs
+highlight ExtraWhitespace ctermbg=red guibg=red
+call matchadd('ExtraWhitespace', '\s\+$')
+
+"
+" Latex-Box
+"
+
+" This makes vim always set filetype=tex to .tex files
+let g:tex_flavor='latex'
+
+autocmd FileType tex nmap <C-o> <C-x><C-o>
+autocmd FileType tex imap <C-o> <C-x><C-o>
+let g:LatexBox_viewer="evince"
+
+"
+" Vim-less
+"
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+"
+" CTRL-P
+"
+"let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+"let g:ctrlp_working_path_mode = 'r'
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+
+"
+" vim-airline
+"
+set laststatus=2
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"
+"
+
+"
+" Show indentation
+"
+"set list
+"set listchars=tab:»-,trail:·,eol:¶,extends:>,precedes:<
+"set listchars=tab:»-,trail:·
+
+"
+" Mouse
+"
+set mouse=a
