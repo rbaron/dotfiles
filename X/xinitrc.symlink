@@ -1,0 +1,37 @@
+# Poor man's dual monitor detector
+if [ `xrandr | grep -c ' connected '` -eq 1 ]; then
+  echo "xrandr: only default monitor on."
+
+elif [ `xrandr | grep -c 'HDMI1 connected '` -eq 1 ]; then
+  xrandr --output HDMI1 --mode 1920x1080 --primary
+  xrandr --output LVDS1 --off
+  xrandr --output LVDS1 --mode 1366x768 --right-of HDMI1
+
+elif [ `xrandr | grep -c 'VGA1 connected '` -eq 1 ]; then
+  xrandr --output VGA1 --mode 1920x1080 --primary
+  xrandr --output LVDS1 --off
+  xrandr --output LVDS1 --mode 1366x768 --right-of VGA1
+fi
+
+# Lower brightness to 80%
+xbacklight -set 80
+
+# Export proxy
+#export http_proxy="example.com:80"
+#export https_proxy="example.com:80"
+#export no_proxy=localhost,192.168.0.*,0.0.0.0
+
+# Set keyboard delay and repetition rate
+xset r rate 180 30
+
+# gpg-agent (Auto-run via /etc/profile.d/gpg-agent.sh)
+#eval $(gpg-agent --daemon) &
+echo UPDATESTARTUPTTY | gpg-connect-agent
+
+# Read ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# systemctl isn't working well with reboots/wm refreshs
+dropboxd &
+
+exec dbus-launch awesome
