@@ -51,6 +51,10 @@ autocmd VimEnter * noremap <C-t> :tabnew<cr>
 autocmd VimEnter * noremap <C-h> <c-w><c-w>
 autocmd VimEnter * noremap <tab><tab> <c-w><c-w>
 
+" Faster scrolling
+noremap <C-e> 2<C-e>
+noremap <C-y> 2<C-y>
+
 "
 " Auto correct
 "
@@ -104,7 +108,7 @@ let g:airline_powerline_fonts = 1
 "
 
 "
-" Mouse
+" Mouse. For scrolling only, of course!
 "
 set mouse=a
 
