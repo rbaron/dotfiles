@@ -5,7 +5,7 @@ if [ `xrandr | grep -c ' connected '` -eq 1 ]; then
 elif [ `xrandr | grep -c 'HDMI1 connected '` -eq 1 ]; then
   xrandr --output HDMI1 --mode 1920x1080 --primary
   xrandr --output LVDS1 --off
-  xrandr --output LVDS1 --mode 1366x768 --right-of HDMI1
+  xrandr --output LVDS1 --right-of HDMI1 --auto #--mode 1366x768
 
 elif [ `xrandr | grep -c 'VGA1 connected '` -eq 1 ]; then
   xrandr --output VGA1 --mode 1920x1080 --primary
@@ -35,3 +35,4 @@ echo UPDATESTARTUPTTY | gpg-connect-agent
 dropboxd &
 
 exec dbus-launch awesome
+#exec dbus-launch i3

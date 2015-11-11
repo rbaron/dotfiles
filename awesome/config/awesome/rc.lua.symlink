@@ -310,9 +310,14 @@ globalkeys = awful.util.table.join(
 
     -- My edit
 
-    awful.key({}, "#121", function () awful.util.spawn("amixer set Master 0") end),
-    awful.key({}, "#122", function () awful.util.spawn("amixer set Master 3-") end),
-    awful.key({}, "#123", function () awful.util.spawn("amixer set Master 3+") end),
+    --awful.key({}, "#121", function () awful.util.spawn("amixer set Master 0") end),
+    --awful.key({}, "#122", function () awful.util.spawn("amixer set Master 3-") end),
+    --awful.key({}, "#123", function () awful.util.spawn("amixer set Master 3+") end),
+
+    awful.key({}, "#121", function () awful.util.spawn("pactl set-sink-volume 0 0") end),
+    awful.key({}, "#122", function () awful.util.spawn("pactl set-sink-volume 0 -5%") end),
+    awful.key({}, "#123", function () awful.util.spawn("pactl set-sink-volume 0 +5%") end),
+
     --awful.key({}, "#224", function () awful.util.spawn("xbacklight -dec 10") end),
     --awful.key({}, "#225", function () awful.util.spawn("xbacklight -inc 10") end),
     awful.key({}, "#232", function () awful.util.spawn("xbacklight -dec 10") end),
