@@ -5,6 +5,15 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/usr/share/oh-my-zsh/
 
+# Disable auto uptate question
+DISABLE_AUTO_UPDATE="true"
+
+# Cache for autocomplete
+ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -50,4 +59,4 @@ setopt EXTENDED_HISTORY        # save timestamp and runtime information
 unset GREP_OPTIONS
 
 # My bins
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH:$HOME/dotfiles/bin"
