@@ -65,9 +65,10 @@ autocmd VimEnter * noremap <F10> :setlocal spell spelllang=pt<cr>
 autocmd VimEnter * noremap <F11> :setlocal nospell<cr>
 
 " Tab => spaces
+
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set expandtab
 
 " Search highlight
 set hlsearch
