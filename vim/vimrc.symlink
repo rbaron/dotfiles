@@ -119,3 +119,7 @@ set mouse=a
 "
 let g:strip_whitespace_on_save = 1
 
+"
+" Python macros
+"
+let @d = 'A	import ipdb; ipdb.set_trace():€kb'
