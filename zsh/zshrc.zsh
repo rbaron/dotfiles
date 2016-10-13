@@ -35,7 +35,11 @@ compinit
 zstyle ':completion:*' special-dirs true
 
 # ZSH git plugin install
-PROMPT='%n@%M:%~$(git_prompt_info) %# '
+#PROMPT='%n@%M:%~$(git_prompt_info)
+#%# '
+# Byobu-like
+#PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;5m%~\e[00m$(git_prompt_info)\e[00m\n%# '
+PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[white]%}:<"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✔%{$reset_color%}"
@@ -49,8 +53,8 @@ bindkey ^r  history-incremental-search-backward
 #setopt hist_ignore_all_dups
 HISTFILE=$HOME/.zshistory       # enable history saving on shell exit
 setopt APPEND_HISTORY          # append rather than overwrite history file.
-HISTSIZE=2000                  # lines of history to maintain memory
-SAVEHIST=1500                  # lines of history to maintain in history file.
+HISTSIZE=20000                 # lines of history to maintain memory
+SAVEHIST=20000                 # lines of history to maintain in history file.
 setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
 

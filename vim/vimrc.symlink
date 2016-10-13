@@ -26,6 +26,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
+
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 
 colorscheme molokai
 
@@ -69,6 +73,7 @@ autocmd VimEnter * noremap <F11> :setlocal nospell<cr>
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
 
 " Search highlight
 set hlsearch

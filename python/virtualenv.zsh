@@ -8,7 +8,7 @@ source /usr/bin/virtualenvwrapper.sh
 #PATH=$HOME/.local/bin:$PATH
 
 # pyenv stuff
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH=$PATH:"$PYENV_ROOT/bin"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH=$PATH:"$PYENV_ROOT/bin"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
