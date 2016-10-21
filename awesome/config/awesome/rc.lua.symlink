@@ -127,9 +127,10 @@ vicious.register(memwidget, vicious.widgets.mem, " | m$1 | ", 10)
 function format_bat_string(widget, args)
   charging_symbol = args[1]
   charging_percent = args[2]
+  charging_time = args[3]
 
   if charging_symbol == "−" then
-    return " | <span color='#FF0000'>b" .. charging_percent .. charging_symbol .. "</span>"
+    return " | <span color='#FF0000'>b" .. charging_percent .. charging_symbol .. charging_time .. "</span>"
   else
     return " | b" .. charging_percent .. charging_symbol
   end
