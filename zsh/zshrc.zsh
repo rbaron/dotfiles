@@ -3,7 +3,7 @@
 #
 
 # Path to your oh-my-zsh configuration.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/src/oh-my-zsh/
 
 # Disable auto uptate question
 DISABLE_AUTO_UPDATE="true"

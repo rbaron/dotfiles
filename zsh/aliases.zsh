@@ -1,7 +1,6 @@
 
 # Aliases
 alias fucking="sudo"
-alias ls="ls --color=auto"
 
 alias mount-android="go-mtpfs /mnt/nexus4"
 alias umount-android="fusermount -u /mnt/nexus4"

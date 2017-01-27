@@ -5,11 +5,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -24,8 +24,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'ntpeters/vim-better-whitespace'
 
 Bundle 'guns/vim-clojure-static'
