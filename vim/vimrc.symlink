@@ -52,6 +52,7 @@ autocmd VimEnter * noremap <C-j> :tabnext<cr>
 autocmd VimEnter * noremap <C-k> :tabprevious<cr>
 autocmd VimEnter * noremap <C-t> :tabnew<cr>
 autocmd VimEnter * noremap <C-h> <c-w><c-w>
+autocmd VimEnter * noremap <C-l> <c-w>W
 autocmd VimEnter * noremap <tab><tab> <c-w><c-w>
 
 " Faster scrolling

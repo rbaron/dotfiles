@@ -1,8 +1,7 @@
-
 # virtualenv  stuff
-#export WORKON_HOME=~/.virtualenvs
-#VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-#source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenvs
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 
 # pip packages
 #PATH=$HOME/.local/bin:$PATH
