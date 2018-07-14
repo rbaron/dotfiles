@@ -2,8 +2,8 @@
 " Vundle plugin manager
 "
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -12,21 +12,15 @@ call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/nerdtree'
-Plugin 'groenewege/vim-less'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
-Plugin 'yegappan/grep'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 
-Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 
 colorscheme molokai
@@ -34,20 +28,16 @@ colorscheme molokai
 filetype plugin on
 
 syntax on
+
 set nu
-set cindent
 set ignorecase
-"set nopaste
 set paste
 
 " Persist undo history
 set undofile
 set undodir=~/.vim/undo/
 
-"
-" Mappings: autocmd VimEnter makes sure the mappings overwrite
-"   any possible plugin mapping
-"
+" Tab navication
 autocmd VimEnter * noremap <C-j> :tabnext<cr>
 autocmd VimEnter * noremap <C-k> :tabprevious<cr>
 autocmd VimEnter * noremap <C-t> :tabnew<cr>
@@ -59,72 +49,50 @@ autocmd VimEnter * noremap <tab><tab> <c-w><c-w>
 noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
 
-"
 " Auto correct
-"
 " Jump to next incorrect word: [s ]s
 autocmd VimEnter * noremap <F9> :setlocal spell spelllang=en_us<cr>
 autocmd VimEnter * noremap <F10> :setlocal spell spelllang=pt<cr>
 autocmd VimEnter * noremap <F11> :setlocal nospell<cr>
 
-" Tab => spaces
-
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-
 " Search highlight
 set hlsearch
 
-"Set actionscript highlight
-autocmd BufRead *.as set filetype=actionscript
-autocmd BufRead *.vue set filetype=javascript
-
-"Highlight overlength lines
+" Highlight overlength lines
 highlight OverLength ctermfg=red
 call matchadd('OverLength', '\%101v.\+')
 
-"
-" Latex-Box
-"
-
-" This makes vim always set filetype=tex to .tex files
-let g:tex_flavor='latex'
-
-autocmd FileType tex nmap <C-o> <C-x><C-o>
-autocmd FileType tex imap <C-o> <C-x><C-o>
-let g:LatexBox_viewer="evince"
-
-"
-" Vim-less
-"
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
-
-"
 " CTRL-P
-"
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
 
-"
 " vim-airline
-"
 set laststatus=2
 let g:airline_powerline_fonts = 1
-"
-"
 
-"
-" Mouse. For scrolling only, of course!
-"
+" Mouse scrolling
 set mouse=a
 
-"
 " Better whitespace
-"
 let g:strip_whitespace_on_save = 1
 
-"
-" Python macros
-"
-let @d = 'A	import ipdb; ipdb.set_trace():€kb'
+" Indentation magic
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set autoindent
+set smartindent
+
+" Python
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType python let @d = 'A	import ipdb; ipdb.set_trace():€kb'
+
+
+" Javascript
+autocmd BufRead *.vue set filetype=javascript
+autocmd BufRead *.as set filetype=actionscript
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+
+
+" HTML, CSS
+autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2
