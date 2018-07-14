@@ -79,6 +79,7 @@ set hlsearch
 
 "Set actionscript highlight
 autocmd BufRead *.as set filetype=actionscript
+autocmd BufRead *.vue set filetype=javascript
 
 "Highlight overlength lines
 highlight OverLength ctermfg=red
