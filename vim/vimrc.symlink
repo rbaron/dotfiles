@@ -13,13 +13,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 Bundle 'tpope/vim-fireplace'
 
@@ -63,7 +64,7 @@ highlight OverLength ctermfg=red
 call matchadd('OverLength', '\%101v.\+')
 
 " CTRL-P
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+nnoremap <c-p> :Files<CR>
 
 " vim-airline
 set laststatus=2
