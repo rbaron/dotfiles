@@ -97,3 +97,6 @@ autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 
 " HTML, CSS
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2
+
+" Clojure
+autocmd FileType clojure noremap cpo :%Eval<cr>
