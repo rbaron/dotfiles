@@ -21,6 +21,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'leafgarland/typescript-vim'
 
 Bundle 'tpope/vim-fireplace'
 
@@ -85,9 +86,10 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 " Python
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType python let @d = 'A	import ipdb; ipdb.set_trace():€kb'
 
 
