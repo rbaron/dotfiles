@@ -64,3 +64,6 @@ unset GREP_OPTIONS
 
 # My bins
 export PATH="$HOME/.bin:$PATH:$HOME/dotfiles/bin"
+
+# Locale
+export LC_ALL=en_US.UTF-8
