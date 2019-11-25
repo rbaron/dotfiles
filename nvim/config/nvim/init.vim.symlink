@@ -1,3 +1,10 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
+
+" Remember to manually create this virtualenv and pip install pynvim
+let g:python3_host_prog = '~/.config/nvim/venv/bin/python'
+
+" YouCompleteMe
+nnoremap <leader>jt :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
