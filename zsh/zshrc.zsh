@@ -3,7 +3,7 @@
 #
 
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/src/oh-my-zsh/
+ZSH=$HOME/src/ohmyzsh/
 
 # Disable auto uptate question
 DISABLE_AUTO_UPDATE="true"
@@ -26,7 +26,7 @@ unsetopt beep
 bindkey -v
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/rapha/.zshrc'
+# zstyle :compinstall filename '/home/rapha/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -34,11 +34,7 @@ compinit
 # Autocomplete . and ..
 zstyle ':completion:*' special-dirs true
 
-# ZSH git plugin install
-#PROMPT='%n@%M:%~$(git_prompt_info)
-#%# '
 # Byobu-like
-#PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;5m%~\e[00m$(git_prompt_info)\e[00m\n%# '
 PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[white]%}:<"
@@ -59,7 +55,6 @@ setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HIST
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
 
 # Fix GREP_OPTIONS error
-#alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
 # My bins
