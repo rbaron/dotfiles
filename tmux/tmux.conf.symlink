@@ -1,0 +1,7 @@
+set -g default-terminal "screen-256color"
+set -g mouse on
+
+# Open new panes and windows in the same directory
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
