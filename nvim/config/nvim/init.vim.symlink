@@ -2,8 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf'
-# Remember to manually install the language servers:
-# :CocInstall coc-python
+" Remember to manually install the language servers:
+" :CocInstall coc-python
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'sainnhe/sonokai'
