@@ -1,10 +1,34 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/fzf'
+# Remember to manually install the language servers:
+# :CocInstall coc-python
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'sainnhe/sonokai'
+Plug 'sheerun/vim-polyglot'
+call plug#end()
 
-" Remember to manually create this virtualenv and pip install pynvim
-let g:python3_host_prog = '~/.config/nvim/venv/bin/python'
+" NERDTree.
+noremap <C-n> :NERDTreeToggle<CR>
 
-" YouCompleteMe
-nnoremap <leader>jt :YcmCompleter GoTo<CR>
-nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+" Tab navigation.
+noremap <C-j> :tabnext<cr>
+noremap <C-k> :tabprevious<cr>
+noremap <C-t> :tabnew<cr>
+noremap <C-h> <c-w><c-w>
+noremap <C-l> <c-w>W
+noremap <tab><tab> <c-w><c-w>
+
+" fzf.
+nnoremap <C-p> :FZF -m<cr>
+
+" Colorscheme.
+colorscheme sonokai
+
+" Mouse support.
+set mouse=a
+
+" Case insensitivy for searching.
+set ignorecase

@@ -1,0 +1,6 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "html", "yaml",  "json", "python"],
+
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+}

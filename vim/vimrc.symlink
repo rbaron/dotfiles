@@ -18,7 +18,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'leafgarland/typescript-vim'
@@ -78,7 +78,7 @@ let g:airline_powerline_fonts = 1
 set mouse=a
 
 " Better whitespace
-let g:strip_whitespace_on_save = 1
+"let g:strip_whitespace_on_save = 1
 
 " Indentation magic
 set tabstop=2
@@ -90,7 +90,8 @@ set backspace=indent,eol,start
 
 " Python
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-autocmd FileType python let @d = 'A	import ipdb; ipdb.set_trace():€kb'
+"autocmd FileType python let @d = 'A
+"	import ipdb; ipdb.set_trace():ï¿½kb'
 
 
 " Javascript
