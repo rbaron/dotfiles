@@ -21,6 +21,11 @@ noremap <C-h> <c-w><c-w>
 noremap <C-l> <c-w>W
 noremap <tab><tab> <c-w><c-w>
 
+" Tabs -> spaces
+set expandtab    " insert spaces when tab is pressed
+set tabstop=4    " number of spaces when tab is pressed
+set shiftwidth=4 " number of spaces when indenting
+
 " fzf.
 nnoremap <C-p> :FZF -m<cr>
 
