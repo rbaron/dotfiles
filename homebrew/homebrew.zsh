@@ -4,6 +4,7 @@
 
 # arm64
 export PATH=/opt/homebrew/bin:$PATH
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 # x86_64
 # export PATH=/usr/local/bin:$PATH
