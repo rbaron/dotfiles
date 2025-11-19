@@ -30,25 +30,25 @@ bindkey -v
 
 # The following lines were added by compinstall
 # zstyle :compinstall filename '/home/rapha/.zshrc'
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
 # End of lines added by compinstall
 
 # Autocomplete . and ..
 zstyle ':completion:*' special-dirs true
 
-# Byobu-like
-PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
-#PS1="%{$(tput setaf 7)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 214)%}%m %{$(tput setaf 7)%}%1~ %{$(tput sgr0)%}$ "
-#PS1="%{%F{7}%}%n%{%F{15}%}@%{%F{214}%}%m %{%F{7}%}%1~ %{%f%}$ "
+# Use https://github.com/sindresorhus/pure.
+fpath+=($HOME/dotfiles/zsh/pure)
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[white]%}:<"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✔%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✘%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[white]%}>%{$reset_color%}"
+# Byobu-like
+#PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
+#ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[white]%}:<"
+#ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✔%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✘%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[white]%}>%{$reset_color%}"
 
 # Backward search in the shell history with <C-r>
-bindkey ^r  history-incremental-search-backward
+#bindkey ^r  history-incremental-search-backward
 
 # History
 #setopt hist_ignore_all_dups
