@@ -709,7 +709,7 @@ prompt_pure_state_setup() {
 		unset MATCH MBEGIN MEND
 	fi
 
-	hostname='@%F{$prompt_pure_colors[host]}%m%f'
+	hostname='%F{$prompt_pure_colors[host:at]}@%f%F{$prompt_pure_colors[host]}%m%f'
 
 	# Always show `username@host`.
 	username='%F{$prompt_pure_colors[user]}%n%f'"$hostname"
@@ -835,6 +835,7 @@ prompt_pure_setup() {
 		git:action           yellow
 		git:dirty            218
 		host                 green
+		host:at              247
 		path                 blue
 		prompt:error         red
 		prompt:success       magenta
