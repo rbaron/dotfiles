@@ -39,6 +39,8 @@ zstyle ':completion:*' special-dirs true
 
 # Byobu-like
 PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
+#PS1="%{$(tput setaf 7)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 214)%}%m %{$(tput setaf 7)%}%1~ %{$(tput sgr0)%}$ "
+#PS1="%{%F{7}%}%n%{%F{15}%}@%{%F{214}%}%m %{%F{7}%}%1~ %{%f%}$ "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[white]%}:<"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✔%{$reset_color%}"

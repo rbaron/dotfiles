@@ -10,5 +10,6 @@ export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 # export PATH=/usr/local/bin:$PATH
 
 # Ruby.
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+# source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 
+eval "$(rbenv init - --no-rehash zsh)"

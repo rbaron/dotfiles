@@ -40,3 +40,8 @@ unset config_files
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rbaron/.lmstudio/bin"
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
