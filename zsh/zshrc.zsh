@@ -39,6 +39,10 @@ zstyle ':completion:*' special-dirs true
 
 # Use https://github.com/sindresorhus/pure.
 fpath+=($HOME/dotfiles/zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
+#zstyle :prompt:pure:user color '#00ff00'
+#zstyle :prompt:pure:host color '#ff880a'
 
 # Byobu-like
 #PS1=$'\e[38;5;245m%n\e[00m@\e[38;5;172m%M:\e[38;5;245m%~\e[00m$(git_prompt_info)\e[00m\n%# '
